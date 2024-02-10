@@ -44,7 +44,7 @@ const App = () => {
     if (Object.keys(errors).length === 0) {
       // Backend phone number validation
       try {
-        await axios.post('http://localhost:5000/api/form',  formData );
+        await axios.post('https://storly-backend.onrender.com/api/form',  formData );
         alert('Form submitted successfully');
       } catch (error) {
         console.log({error})

@@ -42,16 +42,16 @@ const App = () => {
     }
 
     if (Object.keys(errors).length === 0) {
-      // Backend phone number validation
       try {
-        await axios.post('https://storly-backend.onrender.com/api/form',  formData );
-        alert('Form submitted successfully');
+        await axios.post('https://storly-backend.onrender.com/api/form',formData);
+       alert('Form submitted successfully');
       } catch (error) {
-        console.log({error})
-        // errors.phoneNumber = 'Invalid phone number';
-        // setFormData({ ...formData, errors });
+        errors.phoneNumber = 'Invalid phone number';
+        setFormData({ ...formData, errors });
       }
-    } 
+    } else {
+      setFormData({ ...formData, errors });
+    }
   };
 
   return (
